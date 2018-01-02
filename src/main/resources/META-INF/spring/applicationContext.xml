@@ -7,14 +7,6 @@
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 
-	<!-- <bean id="refProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
-    <property name="locations">
-        <list>
-            <value>classpath*:dataSource.properties</value>
-        </list>
-    </property>
-</bean> -->
-	
 	<context:annotation-config></context:annotation-config>
 	<context:component-scan base-package="com.wwd" />
 	<!-- 在这里配置AOP的代理只能父容器使用 而MVC不能使用AOP的代理 因为父容器不能访问子容器上下文 而子容器能够访问父容器的上下文 -->
@@ -27,6 +19,7 @@
 	<import resource="classpath*:META-INF/spring/spring-dataSource.xml" />
 	<import resource="classpath*:META-INF/spring/spring-mybatis.xml" />
 	<import resource="classpath*:META-INF/spring/mybatis-config.xml" />
+	<import resource="classpath*:META-INF/spring/spring-resource.xml" />
 	<!-- 开启定时注解 -->
 	<!-- <task:annotation-driven mode="proxy" /> -->
 

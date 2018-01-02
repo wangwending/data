@@ -39,4 +39,21 @@ public class StudentTest extends BaseTest {
 		int i = studentMapper.insert(student);
 		log.info("add Success !!! {}", i);
 	}
+	
+	@Test
+	public void update() {
+		Student student = new Student();
+		student.setId(3);
+		student.setAge(18);
+		student.setName("李倩倩");
+		student.setSex("女");
+		int i = studentMapper.updateByPrimaryKeySelective(student);
+		log.info("update Success !!! {}", i);
+	}
+	
+	@Test
+	public void delete() {
+		int i = studentMapper.deleteByPrimaryKey(3);
+		log.info("delete Success !!! {}", i);
+	}
 }
